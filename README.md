@@ -47,19 +47,41 @@ Simple and clean user interface
 Lightweight and easy to run
 
 **📂 Project Structure**
-Finance_tracker_app/
+Finance_Tracker/
 │
-├── app.py
-├── templates/
-│ ├── login.html
-│ ├── dashboard.html
-│ └── base.html
+├── app/                     ← Core application package
+│   ├── __init__.py           ← App factory (create_app)
+│   ├── auth.py               ← Authentication logic (login/register)
+│   ├── finance.py            ← Finance-related routes (expenses, dashboard)
+│   ├── tasks.py              ← Task/utility-related routes
+│   ├── models.py             ← Database models
 │
-├── static/
-│ └── style.css
+│   ├── routes/               ← (Optional) route separation
+│   │   └── __init__.py
 │
-├── requirements.txt
-└── README.md
+│   ├── static/               ← Frontend static assets
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── script.js
+│
+│   ├── templates/            ← HTML templates (Jinja2)
+│   │   ├── base.html         ← Base layout
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── dashboard.html
+│   │   └── tasks.html
+│
+├── instance/                 ← Runtime configs (DB, secrets)
+│
+├── venv/                     ← Virtual environment (❌ should not be pushed)
+│
+├── run.py                    ← App entry point
+├── Dockerfile                ← Container definition
+├── requirements.txt          ← Python dependencies
+├── .gitignore
+└── sample.html               ← (Optional / can be removed)
+
 
 **▶️ How to Run the Project
 1️⃣ Clone the Repository**
