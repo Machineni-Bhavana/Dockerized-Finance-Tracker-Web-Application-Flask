@@ -51,12 +51,12 @@ Finance_tracker_app/
 │
 ├── app.py
 ├── templates/
-│   ├── login.html
-│   ├── dashboard.html
-│   └── base.html
+│ ├── login.html
+│ ├── dashboard.html
+│ └── base.html
 │
 ├── static/
-│   └── style.css
+│ └── style.css
 │
 ├── requirements.txt
 └── README.md
