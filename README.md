@@ -1,5 +1,5 @@
-**Dockerized Finance Tracker Web Application | Flask, Python, Docker
-📌 Project Overview**
+**Dockerized Finance Tracker Web Application | Flask, Python, Docker**
+**📌 Project Overview**
 
 The Simple Finance Tracker Application is a web-based application built using Flask that helps users track their income and expenses in a structured and simple way.
 The application allows users to add financial records, view summaries, and understand their spending patterns through a clean and user-friendly interface.
