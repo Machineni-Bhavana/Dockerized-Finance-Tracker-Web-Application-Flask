@@ -43,3 +43,74 @@ The **Dockerized Finance Tracker** provides an efficient solution for personal e
 ---
 
 ## 📂 Project Structure
+
+Dockerized-Finance-Tracker-Web-Application-Flask/ │ ├── app/ # Core Application Package │ ├── init.py # Application Factory Pattern (create_app) │ ├── models.py # SQLAlchemy Database Models (User, Transaction, Category) │ ├── routes/ # Flask Blueprints & Route Controllers │ │ ├── auth.py # User Authentication Routes (login/register) │ │ ├── finance.py # Financial Transaction Routes (add/view transactions) │ │ └── main.py # Dashboard Overview & Homepage Routes │ ├── static/ # Static Assets (CSS Stylesheets, JavaScript, Images) │ └── templates/ # Jinja2 HTML Templates (Dashboard, Forms, Headers) │ ├── run.py # Application Entry Point Script ├── Dockerfile # Production Docker Container Specification ├── requirements.txt # Python Dependencies ├── .gitignore # Git Exclusion Rules └── README.md # Project Documentation
+
+
+
+---
+## 🚀 Quick Start Guide
+### Option 1: Run Locally with Python Virtual Environment
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/Machineni-Bhavana/Dockerized-Finance-Tracker-Web-Application-Flask.git
+cd Dockerized-Finance-Tracker-Web-Application-Flask
+2. Create and Activate a Virtual Environment
+bash
+
+
+# On macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+# On Windows
+python -m venv venv
+venv\Scripts\activate
+3. Install Dependencies
+bash
+
+
+pip install -r requirements.txt
+4. Run the Flask Development Server
+bash
+
+
+python run.py
+Open your web browser and navigate to http://127.0.0.1:5000.
+
+Option 2: Run with Docker 🐳
+1. Build the Docker Image
+bash
+
+
+docker build -t finance-tracker-app .
+2. Run the Docker Container
+bash
+
+
+docker run -p 5000:5000 finance-tracker-app
+Access the application at http://localhost:5000.
+
+🌐 API & Application Routes
+Route	HTTP Method	Description
+/	GET	Main Dashboard Summary (Total Income, Expenses, Net Balance)
+/auth/register	GET, POST	User Registration Form & Account Creation
+/auth/login	GET, POST	User Authentication & Session Login
+/auth/logout	GET	User Logout & Session Invalidation
+/finance/add	GET, POST	Record New Income / Expense Entry
+/finance/history	GET	View Historical Transaction Logs
+🎓 Technical Interview Defensibility Guide
+1. Why use the Flask Application Factory pattern (create_app)?
+Answer: The Application Factory pattern creates app instances dynamically inside a function. This prevents global state mutation, allows multiple app instances with distinct configurations (Development, Testing, Production), and avoids circular import issues.
+
+2. How are Flask Blueprints structured in this application?
+Answer: Blueprints partition the application into modular components (e.g. auth for authentication, finance for transaction logic). Each blueprint encapsulates its own routes, views, and templates, ensuring high cohesion and code maintainability.
+
+3. How does SQLAlchemy ORM manage database entities?
+Answer: SQLAlchemy maps Python classes to relational database tables (e.g., User and Transaction models). It translates object-oriented Python code into optimized SQL queries, preventing SQL injection vulnerabilities.
+
+4. How is Docker used to containerize this Flask application?
+Answer: A custom Dockerfile specifies a lightweight Python base image (python:3.10-slim), copies dependencies (requirements.txt), installs packages, exposes port 5000, and executes python run.py (or Gunicorn) inside an isolated container environment.
+
+
+
+
