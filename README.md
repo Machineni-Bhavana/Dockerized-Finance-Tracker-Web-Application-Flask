@@ -43,8 +43,39 @@ The **Dockerized Finance Tracker** provides an efficient solution for personal e
 ---
 
 ## 📂 Project Structure
+## 📂 Project Structure
 
-Dockerized-Finance-Tracker-Web-Application-Flask/ │ ├── app/ # Core Application Package │ ├── init.py # Application Factory Pattern (create_app) │ ├── models.py # SQLAlchemy Database Models (User, Transaction, Category) │ ├── routes/ # Flask Blueprints & Route Controllers │ │ ├── auth.py # User Authentication Routes (login/register) │ │ ├── finance.py # Financial Transaction Routes (add/view transactions) │ │ └── main.py # Dashboard Overview & Homepage Routes │ ├── static/ # Static Assets (CSS Stylesheets, JavaScript, Images) │ └── templates/ # Jinja2 HTML Templates (Dashboard, Forms, Headers) │ ├── run.py # Application Entry Point Script ├── Dockerfile # Production Docker Container Specification ├── requirements.txt # Python Dependencies ├── .gitignore # Git Exclusion Rules └── README.md # Project Documentation
+```text
+Dockerized-Finance-Tracker-Web-Application-Flask/
+│
+├── app/
+│   ├── __init__.py              # Application factory and Flask configuration
+│   ├── models.py                # SQLAlchemy models (User, Transaction, Category)
+│   │
+│   ├── routes/
+│   │   ├── __init__.py          # Routes package initialization
+│   │   ├── auth.py              # Authentication routes (register, login, logout)
+│   │   ├── finance.py           # Transaction management and finance routes
+│   │   └── main.py              # Dashboard and homepage routes
+│   │
+│   ├── static/
+│   │   ├── css/                 # CSS stylesheets
+│   │   ├── js/                  # JavaScript files
+│   │   └── images/              # Application images and assets
+│   │
+│   └── templates/
+│       ├── base.html             # Base Jinja2 template
+│       ├── dashboard.html        # Financial dashboard
+│       ├── login.html            # User login page
+│       ├── register.html         # User registration page
+│       └── transactions.html     # Transaction management page
+│
+├── run.py                        # Application entry point
+├── Dockerfile                    # Docker container configuration
+├── requirements.txt              # Python dependencies
+├── .gitignore                    # Git exclusion rules
+└── README.md                     # Project documentation
+```
 
 
 
